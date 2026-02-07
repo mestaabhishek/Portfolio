@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme('colors.black');
+  color: white;
+  font-family: 'Inter', sans-serif;
+  cursor: none;
+}
+
+/* Selection color */
+::selection {
+  background: #E10600;
+  color: white;
+}
+
+@layer components {
+  .section {
+    @apply py-32 px-6 md:px-20;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold tracking-widest;
+  }
+
+  .section-title span {
+    @apply text-primary;
+  }
+
+  .section-underline {
+    @apply w-20 h-1 bg-primary mx-auto mt-6;
+  }
+
+  /* .card {
+    @apply bg-surface p-7 rounded-lg border border-white/10;
+  } */
+
+  .card-hover {
+    @apply hover:border-primary transition;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-black px-6 py-3 font-semibold tracking-wider
+           hover:bg-red-600 transition;
+  }
+}
+.cursor-main {
+  width: 10px;
+  height: 10px;
+  background: #E10600;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.8);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 12px;
+  height: 2px;
+  background: rgba(225, 6, 0, 0.7);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 9998;
+  filter: blur(1px);
+}
